@@ -19,7 +19,8 @@ suites:
   - name: default
     driver:
       network:
-        - ['private_network', {ip: '192.168.0.91'}]
+        - ["forwarded_port", {guest: 8443, host: 8443}]
+        - ["forwarded_port", {guest: 443, host: 443}]
       customize:
         cpus: 2
         memory: 4096
